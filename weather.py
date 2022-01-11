@@ -7,3 +7,5 @@ url = 'https://apex.oracle.com/pls/apex/raspberrypi/weatherstation/getallmeasure
 
 # save the data to a variable
 weather = get(url).json()
+
+print(weather['items'])
