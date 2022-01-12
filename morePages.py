@@ -15,8 +15,8 @@ airQuality = [record['air_quality'] for record in data]
 
 humidity = [record['humidity'] for record in data]
 
-plt.plot(timestamps, airQuality, label='air')
-plt.plot(timestamps, temperatures, label='temp')
-plt.plot(timestamps, humidity, label='humidity')
+plt.plot(timestamps, airQuality, label='Air Quality Index')
+plt.plot(timestamps, temperatures, label='temp °c')
+plt.plot(timestamps, humidity, label='humidity %')
 plt.legend()
 plt.show()
