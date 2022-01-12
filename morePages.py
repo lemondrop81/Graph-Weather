@@ -1,10 +1,15 @@
+"""
+    Assignment 2 Graphing the weather
+    Date: January 12 2022
+    Description: A simple program that graphs the weather
+"""
+
 from requests import get
 import matplotlib.pyplot as plt
 from dateutil import parser
 
 url = 'https://apex.oracle.com/pls/apex/raspberrypi/weatherstation/getallmeasurements/1682287'
 
-''' Testing'''
 pages = 1
 weather = get(url).json()
 data = weather['items']
