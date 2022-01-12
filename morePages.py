@@ -13,7 +13,10 @@ timestamps = [parser.parse(record['reading_timestamp']) for record in data]
 
 airQuality = [record['air_quality'] for record in data]
 
-plt.plot(timestamps, airQuality)
-plt.ylabel('Temperature')
-plt.xlabel('date and time')
+humidity = [record['humidity'] for record in data]
+
+plt.plot(timestamps, airQuality, label='air')
+plt.plot(timestamps, temperatures, label='temp')
+plt.plot(timestamps, humidity, label='humidity')
+plt.legend()
 plt.show()
