@@ -8,19 +8,18 @@ from requests import get
 import matplotlib.pyplot as plt
 from dateutil import parser
 
-url = 'https://apex.oracle.com/pls/apex/raspberrypi/weatherstation/getallmeasurements/1682287'
+url = 'https://apex.oracle.com/pls/apex/raspberrypi/weatherstation/getallmeasurements/509944'
 
 pages = 1
 weather = get(url).json()
 data = weather['items']
 
 # Loop through a months worth of data
-while 'next' in weather and pages < 9:
-    url = weather['next']['$ref']
-    print('Fetching {0}'.format(url))
+for i in range(20):
+    url = f'https://apex.oracle.com/pls/apex/raspberrypi/weatherstation/getallmeasurements/509944?page={i}'
+    print(url)
     weather = get(url).json()
     data += weather['items']
-    pages += 1
 
 # Assigns the timestamp data set to a variable
 timestamps = [parser.parse(record['reading_timestamp']) for record in data]
