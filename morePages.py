@@ -39,6 +39,6 @@ plt.plot(timestamps, temperatures, label='temp °c')
 plt.plot(timestamps, humidity, label='humidity %')
 
 # Display the label and legends
-plt.xlabel('date and time')
+plt.xlabel('date')
 plt.legend()
 plt.show()
